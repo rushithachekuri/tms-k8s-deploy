@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tms-frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tms-frontend
+  template:
+    metadata:
+      labels:
+        app: tms-frontend
+    spec:
+      containers:
+        - name: tms-frontend
+          image: tms-frontend
+          ports:
+            - containerPort: 80
